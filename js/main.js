@@ -80,7 +80,7 @@ window.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".trigger-this-we",
       start: "top top", // 앞의 값: trigger에 적용되어 있는 요소의 위치, 뒤의 값: 화면의 표시 위치
-      end: "110% bottom bottom", // 앞의 값: trigger에 적용되어 있는 요소의 위치, 뒤의 값: 화면의 표시 위치
+      end: "109.25% bottom bottom", // 앞의 값: trigger에 적용되어 있는 요소의 위치, 뒤의 값: 화면의 표시 위치
       scrub: true,
       pin: true,
       // markers: true,
@@ -117,14 +117,38 @@ window.addEventListener("DOMContentLoaded", function () {
     start: "500 top",
     end: "bottom bottom",
     scrub: 1,
-    markers: true,
+    // markers: true,
   });
 
-  sec02.to("#section02 .left", { x: -1000, y: 0 }, 0);
+  sec02.to("#section02 .left", { x: -1000, y: 0 }, 0); // to는 목표(시작점에서 이동하는 것)
   sec02.to("#section02 .star03", { x: 1000, y: 0 }, 0);
   sec02.to("#section02 .keyboard", { x: 2400, y: 0 }, 0);
 
   sec02.to("#section02 .create", { x: 2300, y: 0, rotation: 0 }, 0);
   sec02.to("#section02 .title02", { x: 2100, y: 0, rotation: 0 }, 0);
   sec02.to("#section02 .connect", { x: 2200, y: 0, rotation: 0 }, 0);
+
+  sec02.to("#section02 .al_s", { x: -500, y: -300, rotation: -55 }, 0); // 마지막 파라미터 0이 없으면 순차 실행
+  sec02.to("#section02 .al_i", { x: -600, y: -700, rotation: -50 }, 0);
+  sec02.to("#section02 .al_n", { x: -500, y: -1000, rotation: -40 }, 0);
+  sec02.to("#section02 .al_c", { x: -600, y: -1300, rotation: -25 }, 0);
+  sec02.to("#section02 .al_e", { x: -600, y: -1400, rotation: -5 }, 0);
+
+  sec02.to("#section02 .no_1", { x: 100, y: -1300, rotation: 20 }, 0);
+  sec02.to("#section02 .no_9", { x: 300, y: -1150, rotation: 40 }, 0);
+  sec02.to("#section02 .no_8", { x: 500, y: -700, rotation: 55 }, 0);
+  sec02.to("#section02 .no_12", { x: 400, y: -200, rotation: 55 }, 0);
+
+  sec02.to("#section02 .underline", { x: 0, y: 900, opacity: 0 }, 0);
+});
+
+// section 03 blue box active when added class on
+gsap.to("#section03", {
+  scrollTrigger: {
+    trigger: "#section03",
+    start: "top top",
+    scrub: true,
+    toggleClass: "on",
+    markers: true,
+  },
 });
