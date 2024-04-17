@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
-  height: auto;
   overflow: hidden;
+  background: #000;
 }
 
 #container {
@@ -20,9 +20,9 @@
   overflow: hidden;
 }
 
-.scroll-content > section:nth-child(even) {
+/* .scroll-content > section:nth-child(even) {
   background: red;
-}
+} */
 
 .posNum {
   position: fixed;
