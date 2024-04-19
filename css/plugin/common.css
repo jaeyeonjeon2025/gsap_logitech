@@ -20,9 +20,12 @@
   overflow: hidden;
 }
 
-/* .scroll-content > section:nth-child(even) {
-  background: red;
-} */
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* overflow:hidden; */
+}
 
 .posNum {
   position: fixed;
