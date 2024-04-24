@@ -199,7 +199,6 @@ imgs.forEach((img, idx) => {
     start: "-500px top",
     end: "bottom bottom",
     scrub: 1.8,
-    // markers: true,
   });
   sc05.fromTo(
     img,
@@ -309,7 +308,6 @@ gsap.to("#section05", {
     trigger: "#section05",
     start: "4500 top",
     scrub: true,
-    markers: true,
     onEnter: () => {
       video05.play();
     },
@@ -319,3 +317,38 @@ gsap.to("#section05", {
     },
   },
 });
+
+// 섹션 6 화면 위치할 때 글자 슬라이드 업
+gsap.to("#section06", {
+  scrollTrigger: {
+    trigger: "#section06",
+    start: "top top",
+    pin: true,
+    scrub: true,
+    toggleClass: "on",
+  },
+});
+
+// 섹션 6 화면 위치시 스크롤 고정
+gsap.to(".fix-this-6", {
+  scrollTrigger: {
+    trigger: ".trigger-this-6",
+    start: "top top",
+    end: "bottom bottom",
+    pin: true,
+  },
+});
+
+let sec06 = gsap.timeline();
+ScrollTrigger.create({
+  animation: sec06,
+  trigger: "#section06",
+  start: "top top",
+  end: "bottom bottom",
+  scrub: true,
+  markers: true,
+});
+
+sec06.to("#section06 .side .left", { x: -1000 }, 0);
+sec06.to("#section06 .side .right", { x: 1000 }, 0);
+sec06.to("#section06 .underbar", { y: 1000 }, 0);
