@@ -552,3 +552,73 @@ gsap.to(".fix-this-10", {
     scrub: true,
   },
 });
+
+const video10 = document.querySelector("#sc10_video");
+const video11 = document.querySelector("#sc11_video");
+
+function playVideoSec10(top, vidElmt) {
+  gsap.to("#section10", {
+    scrollTrigger: {
+      trigger: "#section10",
+      start: `${top} top`,
+      scrub: true,
+      onEnter: () => {
+        vidElmt.play();
+      },
+      onLeaveBack: () => {
+        vidElmt.currentTime = 0; // 비디오 재생 시간을 0으로 되돌림
+        vidElmt.pause();
+      },
+    },
+  });
+}
+
+playVideoSec10("-500", video10);
+playVideoSec10("1200", video11);
+
+// javascript add or remove class:
+// 변수.classList.add(''); or 변수.classList.remove('');
+
+// select element:
+// document.querySelector('');
+
+// jQuery add or remove class:
+// 변수.addClass(''); or 변수.removeClass('');
+
+// select element:
+// $('');
+
+function animateTextSec10(top, elmt) {
+  gsap.to(elmt, {
+    scrollTrigger: {
+      trigger: "#section10",
+      start: `${top} top`,
+      scrub: true,
+      onEnter: () => {
+        $(elmt).addClass("on");
+      },
+      onLeaveBack: () => {
+        $(elmt).removeClass("on");
+      },
+    },
+  });
+}
+
+animateTextSec10("400", "#section10 .page03");
+animateTextSec10("2800", "#section10 .page05 .container01 .title");
+animateTextSec10("3500", "#section10 .page05 .container02 .title");
+animateTextSec10("4200", "#section10 .page05 .container03 .title");
+
+function scrollMouse(evenOdd, height) {
+  gsap.to(`#section10 .page03 .mouse ${evenOdd}`, {
+    y: height * 2,
+    scrollTrigger: {
+      trigger: "#section10",
+      start: "200 top",
+      scrub: true,
+    },
+  });
+}
+
+scrollMouse(".odd", -innerHeight);
+scrollMouse(".even", innerHeight);
